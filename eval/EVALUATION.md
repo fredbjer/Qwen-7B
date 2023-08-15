@@ -17,6 +17,15 @@ pip install thefuzz
 python evaluate_chat_ceval.py -d data/ceval/
 ```
 
+```
+STEM acc: 50.52 
+Social Science acc: 78.42 
+Humanities acc: 64.62 
+Other acc: 58.47 
+Hard acc:34.27 
+AVERAGE acc:60.55 
+```
+
 - MMLU
 
 ```Shell
@@ -32,6 +41,14 @@ python evaluate_mmlu.py -d data/mmlu/data/
 # Qwen-7B-Chat
 pip install thefuzz
 python evaluate_chat_mmlu.py -d data/mmlu/data/
+```
+
+```
+stem ACC: 47.16 
+Humanities ACC: 51.33 
+other ACC: 64.34 
+social ACC: 66.01 
+AVERAGE ACC:56.49 
 ```
 
 - HumanEval

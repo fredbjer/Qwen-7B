@@ -258,6 +258,32 @@ We measured the average inference speed of generating 2K tokens under BF16 preci
 
 In detail, the setting of profiling is generating 2048 new tokens with 1 context token. The profiling runs on single A100-SXM4-80G GPU with PyTorch 2.0.1 and CUDA 11.8. The inference speed is averaged over the generated 2048 tokens.
 
+#### RTX 3090 for Generating 2048 Tokens
+
+| Quantization Level | Inference Speed with flash_attn (tokens/s) | Inference Speed w/o flash_attn (tokens/s) |
+| ------ | :---------------------------: | :---------------------------: |
+| BF16 (no quantization) | 19.53(18.4GB) | 18.99(18.4GB) |
+| Int8 (bnb) | 7.05(12.47GB) | 7.02(12.46GB) |
+| NF4 (bnb) | 17.82(9.8GB) | 18.13(9.8GB) |
+
+
+#### RTX 3090 for Generating 8192 Tokens
+
+| Quantization Level | Inference Speed with flash_attn (tokens/s) | 
+| ------ | :---------------------------: | 
+| BF16 (no quantization) | -  | 
+| Int8 (bnb) | 7.19(18.47GB) | 
+| NF4 (bnb) | 17.69(15.81GB) | 
+
+
+#### RTX 3090 for Encoding 2048 Tokens
+
+| Quantization Level | Inference Speed with flash_attn (tokens/s) | Inference Speed w/o flash_attn (tokens/s) |
+| ------ | :---------------------------: | :---------------------------: |
+| BF16 (no quantization) | 19.53(18.4GB) | 18.99(18.4GB) |
+| Int8 (bnb) | 7.05(12.47GB) | 7.02(12.46GB) |
+| NF4 (bnb) | 17.82(9.8GB) | 18.13(9.8GB) |
+
 ### GPU Memory Usage
 
 We also profile the peak GPU memory usage for encoding 2048 tokens as context (and generating single token) and generating 8192 tokens (with single token as context) under BF16 or Int8/NF4 quantization levels, respectively. The results are shown below.
