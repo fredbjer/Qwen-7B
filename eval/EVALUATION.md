@@ -67,6 +67,12 @@ python evaluate_chat_mmlu.py -f HumanEval.jsonl -o HumanEval_res_chat.jsonl
 evaluate_functional_correctness HumanEval_res_chat.jsonl
 ```
 
+```
+task_idx: 164it [45:01, 16.48s/it]
+
+{'pass@1': 0.23780487804878048}
+```
+
 When installing package human-eval, please note its following disclaimer:
 
 This program exists to run untrusted model-generated code. Users are strongly encouraged not to do so outside of a robust security sandbox. The execution call in execution.py is deliberately commented out to ensure users read this disclaimer before running code in a potentially unsafe manner. See the comment in execution.py for more information and instructions.
@@ -80,6 +86,10 @@ python evaluate_gsm8k.py
 # Qwen-7B-Chat
 python evaluate_chat_gsm8k.py # zeroshot
 python evaluate_chat_gsm8k.py --use-fewshot # fewshot
+```
+
+```
+Acc:  0.5170583775587566
 ```
 
 - PLUGIN
@@ -97,4 +107,13 @@ pip install json5;
 pip install jsonlines;
 pip install rouge_score;
 python evaluate_plugin.py --eval-react-positive --eval-react-negative --eval-hfagent
+```
+
+```
+{   'hfagent': {   'code score': 74.07407407407408,
+                   'tool selection score': 90.74074074074075,
+                   'tool used score': 92.5925925925926},
+    'react_negative': {'bad_rate': 0.09274193548387097},
+    'react_positive': {   'action_input_rouge': 0.8956220502763766,
+                          'action_right_rate': 0.992}}
 ```
